@@ -1,0 +1,17 @@
+<script>
+    let stnum = 0;
+    let flag1 = true;
+    let str = '192.*168.*221.*331.*333';
+ for(let i=0;i<str.length;i++){
+     if(str[i] == '*'){
+        stnum++; 
+        if(stnum % 2 == 0){
+            flag1 = false;
+        }
+        if(flag1 == false){
+             str = str.slice(0, i) + str.slice(i+1);
+             flag1 = true;            
+        }
+     }
+ }console.log(str);
+</script>

@@ -1,0 +1,93 @@
+<style>
+    
+    #cloud{
+        width: 100px;
+    }
+    
+    
+    </style>
+        
+    <button onclick="mover(true)">RIGH</button>
+    <button onclick="mover(false)">LEFT</button>
+    <img id="cloud" src="cloud.png" alt="">
+    <script>
+    
+    let left = 0;
+    
+    let direction = "right";
+    
+    let k;
+    
+    function mover(args){
+    
+        if(args ==  true){
+    
+     k = setInterval(function(){
+    
+                    parseFloat("33anc77")
+                    // 33
+        let left = parseFloat(cloud.style.marginLeft || 0);
+        if(direction == "right"){
+            left++;
+        }else{
+            left--;
+        }
+        cloud.style.marginLeft = left+'px';
+        let right = cloud.offsetLeft + cloud.offsetWidth;
+        if(right == innerWidth){
+            direction = "left";
+        }else if(left == 0){
+            direction = "right";
+        }
+    }, 2);
+    
+        }else{
+    
+            clearInterval(k);
+    
+        }
+    
+    
+    }
+    </script>
+    <button onclick="moveu(true)">UP</button>
+    <button onclick="moveu(false)">DOWN</button>
+    <script>
+    let up = 0;
+    
+    let direction = "down";
+    
+    let H;
+    
+    function moveu(args){
+    
+        if(args ==  true){
+    
+     H = setInterval(function(){
+    
+                    parseFloat("33anc77")
+                    // 33
+        let up = parseFloat(cloud.style.marginTop || 0);
+        if(direction == "down"){
+            up++;
+        }else{
+            up--;
+        }
+        cloud.style.margintop = up+'px';
+        let down = cloud.offsetTop + cloud.offsteHeight;
+        if(down == innerHeight){
+            direction = "up";
+        }else if(up == 0){
+            direction = "down";
+        }
+    }, 2);
+    
+        }else{
+    
+            clearInterval(H);
+    
+        }
+    
+    
+    }
+    </script>

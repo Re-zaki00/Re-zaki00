@@ -1,0 +1,106 @@
+<style>
+
+    #paret{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .child{
+        width: 300px;
+        height:  300px;
+        border: 1px solid;
+    }
+    
+    .box{
+        /* top:200px;
+        left: 30px; */
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: absolute;
+    }
+    
+    </style>
+    
+    <script>
+    
+    let tagPakra =  false;
+    
+    
+    function _onmousedown(){
+        x = event.clientX - event.currentTarget.offsetLeft;
+        y = event.clientY - event.currentTarget.offsetTop;
+        tagPakra = true;
+        console.log('nouse down')
+    }
+    
+    let x =0;
+    let y =0;
+    
+    
+    function getArea(tag){
+    
+        let box_left = tag.offsetLeft;
+        let box_Top = tag.offsetTop;
+        let box_Right = tag.offsetLeft + tag.offsetWidth;
+        let box_Bottom = tag.offsetTop + tag.offsetHeight;
+    
+        return {
+            left:box_left,
+            top:box_Top,
+            right:box_Right,
+            bottom:box_Bottom
+        }
+    
+    }
+    
+    function _onmousemove(){
+        if(tagPakra){
+            
+            event.currentTarget.style.left = event.clientX - x + 'px';
+            event.currentTarget.style.top = event.clientY - y +'px';
+    
+            let boxArea = getArea(box);
+    
+            let oneArea = getArea(one);
+            let twoArea = getArea(two);
+    
+            if(boxArea.left > oneArea.left && boxArea.top > oneArea.top
+            && boxArea.right < oneArea.right && boxArea.bottom < oneArea.bottom){
+                one.style.background = 'orange';
+            }else{
+                one.style.background = '';
+            }
+    
+            if(boxArea.left > twoArea.left && boxArea.top > twoArea.top
+            && boxArea.right < twoArea.right && boxArea.bottom < twoArea.bottom){
+                two.style.background = 'pink';
+            }else{
+                two.style.background = '';
+            }
+            
+            
+    
+    
+    
+            console.log('nouse moving')
+        }
+    }
+    
+    function _onmouseup(){
+        tagPakra = false;
+        console.log('nouse up')
+    }
+    
+    
+    </script>
+    
+    <div id="paret">
+        <div id="one" class="child"></div>
+        
+        <div id="two" class="child"></div>
+    </div>
+    
+    <div onmouseup="_onmouseup()" onmousemove="_onmousemove()" onmousedown="_onmousedown()" class="box" id="box"></div>
+    
+    <!-- <div onmouseup="_onmouseup()" onmousemove="_onmousemove()" onmousedown="_onmousedown()" class="box" id="box1"></div> -->

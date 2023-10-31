@@ -1,0 +1,189 @@
+<!-- <button onclick="startTruck()">Start</button>
+<button onclick="stopTruck()">Stop</button>
+
+<style>
+
+#truck{
+    position: absolute;
+    right: 0;
+    width: 100px;
+}
+
+.left-faced{
+    transform: scale(-1, 1);
+}
+
+
+</style>
+
+<img id="truck" src="truck.jpg" alt="">
+
+<script>
+
+let key;
+
+let direction = 'aagey';
+
+function stopTruck(){
+    clearInterval(key)
+}
+
+let rightTouch = 0;
+
+function startTruck(){
+  clearInterval(key)
+  key = setInterval(function(){
+        // parseFloat('30px')
+        // //30
+        let right = parseFloat(truck.style.right || 0);
+        
+        if(direction == 'aagey'){
+            right++;
+        }else if(direction == 'peeche'){
+            right--;
+        }
+        
+        // console.log(truck.offsetLeft)
+
+        if(right == innerWidth - truck.offsetWidth){
+
+            rightTouch++;
+
+            // clearInterval(key);
+            direction = 'peeche';
+
+            if(rightTouch == 2){
+                clearInterval(key);
+                return;
+            }
+
+            truck.classList.add('left-faced');
+        }else if(right == 0){
+            direction = 'aagey';
+            truck.classList.remove('left-faced');
+        }
+
+      
+
+
+        console.log(right)
+        truck.style.right = right + 'px';
+    }, 0)
+
+}
+//     let count = +prompt("ente number");
+//     let hold = count;
+    
+//     let meriKey = setInterval(function (){
+//     console.log(count);
+//     if(count == hold+10){
+//         clearInterval(meriKey);
+//     }
+//     count++;
+// }, 1000);
+
+
+</script>
+
+
+// moving truck on random locations
+
+
+<style>
+
+img{
+    position: absolute;
+    width: 100px;
+}
+
+</style>
+
+<img id="truck" src="truck.jpg" alt="">
+
+
+<script>
+
+
+
+
+let k = setTimeout(function(){
+
+    truck.style.left =  (Math.random() * innerWidth) + 'px';
+    truck.style.top =  (Math.random() * innerHeight) + 'px';
+    truck.style.bottom =  (Math.random() * outerHeight) + 'px';
+    truck.style.right =  (Math.random() * outerWidth) + 'px';
+    console.log('some')
+
+}, 1000)
+
+
+
+</script> -->
+
+
+<style>
+#body{
+    background-color: white;
+}
+#cloud{
+    width: 100px;
+}
+#thunder{
+   width: 195px;
+   margin-left: 760px;
+   display:contents; 
+}
+
+
+</style>
+    
+<button onclick="move(true)">Start</button>
+<button onclick="move(false)">Stop</button>
+<img id="cloud" src="cloud.png" alt="">
+<img id="thunder" src="thunder.png" alt=""><script>
+
+let left = 0;
+
+let direction = "right";
+
+let k;
+
+function move(args){
+
+    if(args ==  true){
+
+ k = setInterval(function(){
+
+                parseFloat("33anc77")
+                // 33
+    let left = parseFloat(cloud.style.marginLeft || 0);
+    if(direction == "right"){
+        left++;
+    }else{
+        left--;
+    }
+    if(cloud.style.marginLeft = 760){
+        thunder.style.display == block;
+        body.style.background == 'black';
+    }
+    cloud.style.marginLeft = left+'px';
+    let right = cloud.offsetLeft + cloud.offsetWidth;
+    if(right == innerWidth){
+        direction = "left";
+    }else if(left == 0){
+        direction = "right";
+    }
+}, 2);
+
+    }else{
+
+        clearInterval(k);
+
+    }
+
+
+}
+
+
+
+</script>

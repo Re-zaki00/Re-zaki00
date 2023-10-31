@@ -1,0 +1,59 @@
+<body id="new1">
+    
+</body>
+
+<!-- 
+<div id="some">
+    
+</div> -->
+
+<button onclick="startGame()" onmouseenter="some()">click kren</button>
+
+<script>
+
+
+
+    new1.onmousemove = function a1(){
+        
+        let halfX = innerWidth / 2;
+        let halfY = innerHeight / 2;
+
+        if(event.clientX > halfX){                    
+
+            if(event.clientY > halfY){
+                new1.style.backgroundColor = 'pink';
+            }else{
+                new1.style.backgroundColor = 'blue';
+            }
+
+event.shiftKey && event.altKey
+
+        }else{
+
+            if(event.clientY > halfY){
+                new1.style.backgroundColor = 'orange';
+            }else{
+                new1.style.backgroundColor = 'magenta';
+            }
+
+        }
+
+
+    }
+
+
+anc();
+
+    function anc(){
+        console.log(event)
+
+    }
+
+function some(){
+    console.log(event);
+    console.log('asdasd');
+}
+
+
+
+</script>

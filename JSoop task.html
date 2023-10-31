@@ -1,0 +1,111 @@
+<!-- <script>
+
+    let accounts = [
+        {
+            amount:444,
+        },
+        {
+            amount:250,
+        },
+        {
+            amount:1000,
+        },
+        {
+            amount:780,
+        }
+    ]
+
+    accounts.sort((a, b)=>{
+            let accendammount = b.amount - a.amount;
+    });
+
+    // let total =  accounts.reduce((n,p)=>{
+    //     return {amount: n.amount+p.amount};
+    // });
+
+    console.log(accendammount);
+
+
+</script> -->
+
+<!-- <script>
+    let s1 =   {name:'ali', city:'fsd', subjects:['bio']};
+let s2 = {name:'Rameez', city:'RWP'};
+let s3 = {name:'ahmed', city:'LHR'}    
+
+delete s1.subjects;
+
+let students = [
+        s1,s2,s3
+    ]
+
+    for(let student of students){
+        console.log(student.name)
+    }
+
+
+
+    students[0].subjects.push('CS');
+
+    let studetns = ['ali', 20, 'rameez', 40, 'aqsa', 55];
+
+    object
+    let s1 = {
+        education:{
+            // gpa:3.5,
+            subjects:[],
+            roll: 20,
+            passed:true,        
+        },
+        $name: 'ali',        
+        //key:value
+    }
+    delete s1.education.passed;
+
+    s1.education.gpa = 3;
+    
+    s1['$name']
+    s1.$name
+
+    console.log(s1);
+
+    let s2 = {
+        name:'rameez',
+        rolL:21
+    }
+
+    let data = [s1, s2]
+</script> -->
+ 
+<button onclick="addUser()">Add User</button>
+<button onclick="AceSort()">Accending Sorting</button>
+<button onclick="DecSort()">Decending Sorting</button>
+<script>
+    let users = [];
+    let Totaly;
+
+    function addUser(){
+        let name  = prompt("Enter name");
+        let city  = prompt("Enter city");
+        let amount  = prompt("Enter ammount");
+        let myUser = {
+            name:name,
+            city:city,
+            amount:amount
+        }
+       users.push(myUser);
+    }
+    function AceSort(){
+    users.sort((a, b)=>{
+            Totaly = b.amount - a.amount;
+            return Totaly;
+    });
+}
+function DecSort(){
+    users.sort((a, b)=>{
+            Totaly = b.amount + a.amount;
+            return Totaly;
+    });
+}
+console.log(Totaly);
+</script>

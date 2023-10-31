@@ -1,0 +1,46 @@
+<style>
+    #box{
+        top:0;
+        left:0;
+        position: sticky;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+    
+</style>
+    
+<div onmousemove="jabMouseMove()" onmouseup="jabMouseUp()" onmousedown="jabMouseDown()" id="box"></div>
+    
+<script>
+    //ofset property use kar kai box ko relatively x,y handel karlena aur baqi sab theek hai ?
+    let pakarLia =  false;
+    let x =  0;
+    let y =  0;
+
+    if(pakarLia == false){
+    
+    function jabMouseDown(){
+        pakarLia = true;
+        x = event.clientX - event.currentTarget.offsetLeft;
+        y = event.clientY - event.currentTarget.offsetTop;
+        console.log('pakar lia')
+    }   
+    }
+
+    
+
+    function jabMouseMove(){
+        if(pakarLia == true){
+            box.style.top =  (event.clientY - y) + 'px';
+            box.style.left = (event.clientX - x) + 'px';
+            console.log('chaling')
+        }
+    }
+
+    function jabMouseUp(){
+        pakarLia =  false
+        console.log('chor dia');
+    }
+    
+    </script>

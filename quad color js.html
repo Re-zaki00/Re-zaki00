@@ -1,0 +1,94 @@
+<body id="b1" onmousemove="some()">
+<h1 id="upleft"> 1 </h1>
+<h1 id="upright"> 2 </h1>
+<h1 id="downleft"> 3 </h1>
+<h1 id="downright"> 4 </h1>    
+</body>
+<style>
+   #upleft{
+        position: relative;
+        margin-right: inherit;
+        right: 100%;
+        color: green;       
+    }
+    #upright{
+        position: relative;
+        margin-left: inherit;
+        left: 100%;
+        color: yellow;       
+    }
+    #downleft{
+        position: relative;
+        margin-top: 100%;
+        margin-right: inherit;
+        right: 100%;
+        color: blue;       
+    }
+    #downright{
+        position: relative;
+        color: red;       
+    }
+</style>
+<script>
+
+    function some(){
+        let halfX = innerWidth/2;
+        let halfY = innerHeight/2;
+        if(event.clientX < halfX && event.clientY < halfY)
+        {
+            b1.style.backgroundColor = 'red';
+        }
+        if(event.clientX > halfX && event.clientY < halfY)
+        {
+            b1.style.backgroundColor = 'blue';
+        }
+
+        if(event.clientX < halfX && event.clientY > halfY)
+        {
+            b1.style.backgroundColor = 'yellow';
+        }
+        if(event.clientX > halfX && event.clientY > halfY)
+        {
+            b1.style.backgroundColor = 'green';
+        }
+        console.log(event.clientX, event.clientY)
+    }
+
+
+
+</script>
+
+
+<!-- 
+<input oninput="a2()" type="text">
+
+
+<img onload="a1()" src="sheep.jpg" alt="">
+
+
+
+<button>asdlkasd</button>
+<button>asdlkasd</button>
+<button onmousemove="some1()" onclick="hello()">asdlkasd</button>
+<button>asdlkasd</button>
+
+<script>
+
+    function a2(){
+        console.log('input asdasd')
+    }
+
+    function a1(){
+        console.log('img load hogyi')
+    }
+
+    function some1(){
+        console.log(event.clientX, event.clientY);
+        console.log('mouse enter hoga')
+    }
+
+function hello(){
+    console.log('some')
+}
+
+</script> -->

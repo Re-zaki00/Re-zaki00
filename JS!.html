@@ -1,0 +1,38 @@
+<script>
+    let str  = '12345';
+    let newStr = '';
+    let spst = '';
+    let outp = '';
+    let outp1 = '';
+ for(let i = 0;i<str.length;i++){
+     newStr += str[i] + ".".repeat(str[i]);
+ }
+ spst = newStr.split("");
+ outp = spst.reverse();
+ for(let j = 0;j<str.length;j++){
+  
+ if(outp.slice(j)== NaN){
+    for(let i = str.length;i<=0;i++){
+     newStr += str[i] + ".".repeat(str[i]);
+ }
+ }
+ else{
+    outp = outp.join("");
+ }
+  
+ }
+//  for(let j = 0;j<str.length;j++){
+//     a=newStr.slice(j);
+//     if(a == '.'){
+//         newStr = newStr.slice(a);
+//  }}
+
+console.log(newStr);
+ console.log(outp1);
+ console.log(outp);
+
+// "1.....2....3...4..5."
+//"12345"
+//"54321"
+//"..... .... ... ."
+</script>

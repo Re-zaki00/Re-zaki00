@@ -1,0 +1,29 @@
+<script>
+let arr1 =[7,8,9,1,4,5,6,2,3,10];
+//array.sort()
+
+let some =getMax(arr1);
+function getMax(arr1){
+    let max = arr1[0];
+    for(let i=1;i<=arr1.length;i++){
+        if(arr1[i]>max){
+            max = arr1[i];
+        }
+
+    }
+    return max;
+}
+console.log(arr1);
+
+// let num = array[0],maxnum;
+// for(let i=1;i<=array.length;i++){
+//     maxnum = array[i];
+//     if(num > maxnum){
+//          maxnum = num;
+//     }
+//     else{
+//         num = array[i];
+//     }
+// }
+// console.log(array);
+</script>

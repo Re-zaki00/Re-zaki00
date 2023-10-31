@@ -1,0 +1,179 @@
+<style>
+    body{
+        background-color: black;
+    }
+    #task{
+        color:ghostwhite;
+        text-align: center;
+    }
+    #paret{
+        top: 10px;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .child{
+        width: 300px;
+        height:  300px;
+        border: 1px solid;
+    }
+    #one{
+        color: red;
+        text-align: center;
+    }
+    #two{
+        color: blue;
+        text-align: center;
+    }
+    #three{
+        color: yellow;
+        text-align: center;
+    }
+    #four{
+        color: green;
+        text-align: center;
+    }
+    
+    .box{
+        top:180px;
+        left: 690px;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: absolute;
+    }
+    
+</style>
+<script>
+    let tagclick = false;
+    function _onmousedown(){
+        x = event.clientX - event.currentTarget.offsetLeft;
+        y = event.clientY - event.currentTarget.offsetTop;
+        tagclick = true;
+        console.log('clicked')
+    }
+    
+    let x =0;
+    let y =0;
+    
+    
+    function getArea(tag){
+    
+        let box_left = tag.offsetLeft;
+        let box_Top = tag.offsetTop;
+        let box_Right = tag.offsetLeft + tag.offsetWidth;
+        let box_Bottom = tag.offsetTop + tag.offsetHeight;
+    
+        return {
+            left:box_left,
+            top:box_Top,
+            right:box_Right,
+            bottom:box_Bottom
+        }
+    
+    }
+    
+    
+    function _onmousemove(){
+        if(tagclick){
+            
+            event.currentTarget.style.left = event.clientX - x + 'px';
+            event.currentTarget.style.top = event.clientY - y +'px';
+
+    
+            let boxArea = getArea(box);
+
+            // setInterval(function{
+            //     box.style.background = 'red';
+            // },5000)
+    
+            let oneArea = getArea(one);
+            if(boxArea.left > oneArea.left && boxArea.top > oneArea.top
+            && boxArea.right < oneArea.right && boxArea.bottom < oneArea.bottom || box.style.background == 'red'){
+                one.style.background = 'Pink';
+                box.style.background = 'blue';
+                box.style.top = 180;
+                box.style.left = 690;
+                
+            }
+            else{
+                one.style.background = '';
+            }
+    
+            let twoArea = getArea(two);
+
+            if(boxArea.left > twoArea.left && boxArea.top > twoArea.top
+            && boxArea.right < twoArea.right && boxArea.bottom < twoArea.bottom && box.style.background == 'blue'){
+                two.style.background = 'Aqua';
+                box.style.background = 'yellow';
+                box.style.top = 180;
+                box.style.left = 690;
+                
+            }
+            else{
+                two.style.background = '';
+            }
+
+            let threeArea = getArea(three);
+
+            if(boxArea.left > threeArea.left && boxArea.top > threeArea.top
+            && boxArea.right < threeArea.right && boxArea.bottom < threeArea.bottom && box.style.background == 'yellow'){
+                three.style.background = 'lightyellow';
+                box.style.background = 'green';
+                box.style.top = 180;
+                box.style.left = 690;
+                
+            }
+            else{
+                three.style.background = '';
+            }
+
+            let fourArea = getArea(four);
+
+            if(boxArea.left > fourArea.left && boxArea.top > fourArea.top
+            && boxArea.right < fourArea.right && boxArea.bottom < fourArea.bottom && box.style.background == 'green'){
+                four.style.background = 'lightgreen';
+                box.style.background = 'red';
+                box.style.top = 180;
+                box.style.left = 690;
+                
+            }
+            else{
+                four.style.background = '';
+            }
+            
+            console.log('draging')
+        }
+    }
+    
+    function _onmouseup(){
+        tagclick = false;
+        console.log('not clicked')
+    }
+    
+    
+</script>
+<body>
+    <h1 id="task"><b>* Drag coloured square to the matching coloured container *</b></h1>
+    <div id="paret">
+        <div id="one" class="child">
+            <h1 id="redbox">Red</h1>
+        </div>
+        
+        <div id="two" class="child">
+            <h1 id="bluebox">Blue</h1>
+        </div>
+    </div>
+    <br>
+    <div id="paret">
+        <div id="three" class="child">
+            <h1 id="yellowbox">Yellow</h1>
+        </div>
+
+        <div id="four" class="child">
+            <h1 id="greenbox">Green</h1>
+        </div>
+    </div>
+    
+    <div onmouseup="_onmouseup()" onmousemove="_onmousemove()" onmousedown="_onmousedown()" class="box" id="box"></div>
+</body>

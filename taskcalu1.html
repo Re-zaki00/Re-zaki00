@@ -1,0 +1,28 @@
+<script>
+    // let total = a()*b(null)+c(5);
+    //  function a(){
+    //     return b(2)+c(2);
+    //  }
+    //  function b(a){
+    //     return a+c(3)*2;
+    //  }
+    //  function c(b){
+    //     return b*b;
+    //  }
+    //  console.log(total);
+
+     let total = a()*b(null)+c(5);
+     function a()
+     {
+        function b(a=0)
+        {
+            function c(b=0)
+            {
+        return b*b;
+     }
+        return a+c(3)*2;
+     }
+        return b(2)+c(2);
+     }
+     console.log(total);
+</script>

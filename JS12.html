@@ -1,0 +1,9 @@
+<script>
+let str = '2..4...5..6....8...0...6..';
+ for(let i=0;i<str.length;i++){
+     if(str.slice(i,i+3)=='...'){
+        str = str.slice(0, i) + str.slice(i+3);
+     }
+ }console.log(str);
+ // ab 2 dosts rehnay do aur 3 dots ko 2 sai replace kardo!
+</script>
